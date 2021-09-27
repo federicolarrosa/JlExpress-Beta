@@ -22,7 +22,6 @@ import { App } from "./App.js";
 // Wait for the deviceready event before using any of Cordova's device APIs.
 // See https://cordova.apache.org/docs/en/latest/cordova/events/events.html#deviceready
 const d = document;
-d.addEventListener('deviceready', onDeviceReady, false);
 d.addEventListener("DOMContentLoaded", App);
 
 
