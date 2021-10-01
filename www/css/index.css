@@ -1,0 +1,293 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+* {
+  -webkit-tap-highlight-color: rgba(
+    255,
+    255,
+    255,
+    0
+  ); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+html {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+
+body {
+  -webkit-touch-callout: none; /* prevent callout to copy image, etc when tap to hold */
+  -webkit-text-size-adjust: none; /* prevent webkit from resizing text to fit */
+  background: rgb(255, 255, 255);
+  height: 100vh;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+/* Portrait layout (default) */
+/*.app {
+  /*background: url(../img/logo1_v2_L.png) no-repeat center top;*/ /* 170px x 200px */
+/*position: absolute; /* position in the center of the screen */
+/*left: 20%;
+/*top: 20%;
+/*height: 50px; /* text area height */
+/*width: 225px; /* text area width */
+/*text-align: center;
+  /*padding: 180px 0px 0px 0px; /* image height is 200px (bottom 20px are overlapped with text) */
+/*margin: -115px 0px 0px -112px; /* offset vertical: half of image height and text area height */
+/* offset horizontal: half of text area width */
+/*}
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width: 400px) {
+  .app {
+    background-position: left center;
+    padding: 75px 0px 75px 170px; /* padding-top + padding-bottom + text area = image height */
+    margin: -90px 0px 0px -198px; /* offset vertical: half of image height */
+    /* offset horizontal: half of image width and text area width */
+  }
+}
+/*--- HEADER - -*/
+.header {
+  margin: 0px;
+  padding: 0px;
+  padding-bottom: 5%;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 1) 23%,
+    rgba(0, 64, 189, 1) 100%
+  );
+  background-size: cover;
+  box-shadow: #000000;
+}
+
+/*----- loader ----*/
+.loader {
+  margin: 1rem auto;
+  display: block;
+  width: 4rem;
+  height: 4rem;
+}
+/*---- Error cargar pag---*/
+.error {
+  padding-top: 0;
+  font-size: 150%;
+  font-weight: bold;
+  text-align: center;
+  color: #ff0000;
+  background-color: rgb(42, 47, 128);
+}
+/*---- FORM BUSQUEDA---*/
+.cont {
+  height: 100%;
+  padding-top: 0px;
+  float: right;
+  box-sizing: border-box;
+}
+
+input[type="search"] {
+  width: 250px;
+  margin: 10px;
+  padding: 10px 16px;
+  border-radius: 32px;
+  outline: none;
+  border: 2px solid #afafaf;
+  background: #ffffff;
+  transition: all 0.5s;
+}
+input[type="search"]:focus {
+  background: #fff;
+  width: 350px;
+  color: #000;
+}
+/*---- NAV MENU----*/
+.contenedor {
+  width: 95%;
+  max-width: max-content;
+  margin: 0;
+}
+.logo {
+  width: 150px;
+  margin: 0;
+  padding-left: 20%;
+}
+.carrito-img {
+  width: 110px;
+  margin: 0;
+}
+.carrito-img .img-carrito {
+  width: 100%;
+}
+header nav {
+  background: #3498db;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+}
+header nav ul {
+  list-style: none;
+  overflow: hidden;
+}
+header nav ul li {
+  float: left;
+}
+header nav ul li a {
+  display: block;
+  padding: 12px;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: #2c2c2c;
+}
+header nav ul li a:hover {
+  background: #2980b9;
+}
+
+.menu-fixed {
+  z-index: 1000;
+  width: 103%;
+  background: #3498db;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0px;
+  box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.5);
+}
+.menu-fixed .logo {
+  width: 80px;
+  margin: 0;
+}
+.menu-fixed .logo img {
+  width: 100%;
+}
+.menu-fixed .item-options {
+  color: #f1f1f1;
+  margin: 0 0.5rem;
+  font-size: 14px;
+}
+
+h1 {
+  text-align: center;
+  margin: 0px 0 40px;
+  text-align: center;
+  font-size: 40px;
+  color: #7ea6fc00;
+  /*text-shadow: 2px 2px 4px #000000;*/
+  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+}
+h2 {
+  color: #000;
+}
+/* ---- cards articulos----*/
+.cards {
+  margin: 1rem auto;
+  padding: 1rem;
+  width: 80%;
+  background-color: #e7e7e7;
+  border-radius: 0.35rem;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  text-align: center;
+  transition: all 0.25s;
+}
+.cards:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+}
+
+.cards h2 {
+  color: #000;
+}
+.cards p {
+  display: flex;
+  justify-content: space-between;
+  color: #000;
+}
+.articulos {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.articulos img {
+  width: max-content;
+  height: 300px;
+}
+.articulos h2 {
+  color: #555555;
+  text-align: left;
+  size: 50px;
+}
+.grid-fluid {
+  margin: 1rem auto;
+  max-width: 80%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+.event {
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 12px;
+  margin: 0px 30px;
+  padding: 2px 0px;
+}
+
+.event.listening {
+  background-color: #0400e9;
+  display: block;
+}
+
+.event.received {
+  background-color: #4b946a;
+  display: none;
+}
+
+#deviceready.ready .event.listening {
+  display: none;
+}
+#deviceready.ready .event.received {
+  display: block;
+}
+
+@keyframes fade {
+  from {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.blink {
+  animation: fade 3000ms infinite;
+  -webkit-animation: fade 3000ms infinite;
+}
